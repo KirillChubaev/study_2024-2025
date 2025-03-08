@@ -1,0 +1,126 @@
+<h1 id="цель-работы">Цель работы</h1>
+<p>Получение навыков правильной работы с репозиториями git.</p>
+<h1 id="теоретические-сведения">Теоретические сведения</h1>
+<ul>
+<li><p>Gitflow Workflow опубликована и популяризована Винсентом
+Дриссеном.</p></li>
+<li><p>Gitflow Workflow предполагает выстраивание строгой модели
+ветвления с учётом выпуска проекта.</p></li>
+<li><p>Данная модель отлично подходит для организации рабочего процесса
+на основе релизов.</p></li>
+<li><p>Работа по модели Gitflow включает создание отдельной ветки для
+исправлений ошибок в рабочей среде.</p></li>
+<li><p>Последовательность действий при работе по модели
+Gitflow:</p></li>
+<li><p>Из ветки master создаётся ветка develop.</p></li>
+<li><p>Из ветки develop создаётся ветка release.</p></li>
+<li><p>Из ветки develop создаются ветки feature.</p></li>
+<li><p>Когда работа над веткой feature завершена, она сливается с веткой
+develop.</p></li>
+<li><p>Когда работа над веткой релиза release завершена, она сливается в
+ветки develop и master.</p></li>
+<li><p>Если в master обнаружена проблема, из master создаётся ветка
+hotfix.</p></li>
+<li><p>Когда работа над веткой исправления hotfix завершена, она
+сливается в ветки develop и master.</p></li>
+</ul>
+<h1 id="выполнение-лабораторной-работы">Выполнение лабораторной
+работы</h1>
+<h2 id="работа-с-тестовым-репозиторием">Работа с тестовым
+репозиторием</h2>
+<p>Для работы с Node.js добавим каталог с исполняемыми файлами,
+устанавливаемыми yarn, в переменную PATH.</p>
+<figure>
+<img src="image/01.png" id="fig:001" style="width:70.0%;height:70.0%"
+alt="Node.js" />
+<figcaption aria-hidden="true">Node.js</figcaption>
+</figure>
+<p>Программа commitizen используется для помощи в форматировании
+коммитов. При этом устанавливается скрипт git-cz, который мы и будем
+использовать для коммитов.</p>
+<figure>
+<img src="image/02.png" id="fig:002" style="width:70.0%;height:70.0%"
+alt="установка commitizen" />
+<figcaption aria-hidden="true">установка commitizen</figcaption>
+</figure>
+<p>Программа standard-changelog используется для помощи в создании
+логов.</p>
+<figure>
+<img src="image/03.png" id="fig:003" style="width:70.0%;height:70.0%"
+alt="установка standard-changelog" />
+<figcaption aria-hidden="true">установка standard-changelog</figcaption>
+</figure>
+<p>Делаем первый коммит и выкладываем на github.</p>
+<p>Необходимо заполнить несколько параметров пакета.</p>
+<p>Таким образом, файл package.json приобретает вид:</p>
+<figure>
+<img src="image/04.png" id="fig:004" style="width:70.0%;height:70.0%"
+alt="package.json" />
+<figcaption aria-hidden="true">package.json</figcaption>
+</figure>
+<p>Добавим новые файлы.</p>
+<p>Выполним коммит.</p>
+<p>Отправим на github.</p>
+<figure>
+<img src="image/05.png" id="fig:005" style="width:70.0%;height:70.0%"
+alt="Отправка" />
+<figcaption aria-hidden="true">Отправка</figcaption>
+</figure>
+<p>Инициализируем git-flow</p>
+<p>Проверьте, что Вы на ветке develop</p>
+<p>Загрузите весь репозиторий в хранилище</p>
+<figure>
+<img src="image/06.png" id="fig:006" style="width:70.0%;height:70.0%"
+alt="Инициализация и загрузка изменений" />
+<figcaption aria-hidden="true">Инициализация и загрузка
+изменений</figcaption>
+</figure>
+<p>Установите внешнюю ветку как вышестоящую для этой ветки</p>
+<p>Создадим релиз с версией 1.0.0</p>
+<p>Создадим журнал изменений</p>
+<p>Добавим журнал изменений в индекс</p>
+<p>Зальём релизную ветку в основную ветку</p>
+<figure>
+<img src="image/07.png" id="fig:007" style="width:70.0%;height:70.0%"
+alt="Завершение релиза" />
+<figcaption aria-hidden="true">Завершение релиза</figcaption>
+</figure>
+<p>Отправим данные на github</p>
+<figure>
+<img src="image/08.png" id="fig:008" style="width:70.0%;height:70.0%"
+alt="Отправка" />
+<figcaption aria-hidden="true">Отправка</figcaption>
+</figure>
+<p>Создадим ветку для новой функциональности По окончании разработки
+новой функциональности следующим шагом следует объединить ветку
+feature_branch c develop:</p>
+<figure>
+<img src="image/09.png" id="fig:009" style="width:70.0%;height:70.0%"
+alt="Объединение веток" />
+<figcaption aria-hidden="true">Объединение веток</figcaption>
+</figure>
+<p>Создадим релиз с версией 1.2.3</p>
+<p>Обновите номер версии в файле package.json. Установите её в 1.2.3</p>
+<p>Создадим журнал изменений</p>
+<p>Добавим журнал изменений в индекс</p>
+<p>Зальём релизную ветку в основную ветку</p>
+<figure>
+<img src="image/10.png" id="fig:010" style="width:70.0%;height:70.0%"
+alt="Завершение релиза" />
+<figcaption aria-hidden="true">Завершение релиза</figcaption>
+</figure>
+<h2 id="подготовка-рабочего-репозитория">Подготовка рабочего
+репозитория</h2>
+<figure>
+<img src="image/11.png" id="fig:011" style="width:70.0%;height:70.0%"
+alt="package.json и коммит" />
+<figcaption aria-hidden="true">package.json и коммит</figcaption>
+</figure>
+<figure>
+<img src="image/12.png" id="fig:012" style="width:70.0%;height:70.0%"
+alt="Завершение релиза" />
+<figcaption aria-hidden="true">Завершение релиза</figcaption>
+</figure>
+<h1 id="вывод">Вывод</h1>
+<p>Мы приобрели практические навыки взаимодействия с дополнительными
+функциями GitHub.</p>
